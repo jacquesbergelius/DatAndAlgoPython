@@ -28,3 +28,4 @@ Knuth, The Art of Computer Programming, Vols. 1-4A, Addison-Wesley, 2011
 - [Generators](1.2_Generators.md)
 - [Lambda Functions](1.3_Lambda_Functions.md)
 - [Regular Expressions](1.4_Regular_Expressions.md)
+- [Measuring Execution Time of Python Functions](1.5_Execution_Time_Measurement.md)
