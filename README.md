@@ -23,6 +23,10 @@ What every computer science major should know (http://matt.might.net/articles/wh
 - For Gurus, THE algorithm book:
 Knuth, The Art of Computer Programming, Vols. 1-4A, Addison-Wesley, 2011
 
+## Useful links
+- Good algorithm visualization tool: https://visualgo.net/en
+- Special Binary Tree visualizer: http://btv.melezinek.cz/binary-search-tree.html
+
 ## Advanced Python concepts
 - [List Comprehensions](1.1_List_Comprehension.md)
 - [Generators](1.2_Generators.md)
