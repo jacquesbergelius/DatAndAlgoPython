@@ -27,6 +27,44 @@ Knuth, The Art of Computer Programming, Vols. 1-4A, Addison-Wesley, 2011
 - Good algorithm visualization tool: https://visualgo.net/en
 - Special Binary Tree visualizer: http://btv.melezinek.cz/binary-search-tree.html
 
+## Recursion
+
+[Recursion](https://en.wikipedia.org/wiki/Recursion) in computer science refers to a programming technique where a function calls itself in order to solve a problem. Instead of using iteration (loops) to repeatedly execute a set of instructions, a recursive function breaks down a problem into smaller, more manageable subproblems, eventually reaching a base case where the solution can be directly computed.
+
+The basic structure of a recursive function includes:
+
+1. **Base Case**: This is the terminating condition that prevents the function from calling itself indefinitely. It provides the exit condition for the recursive loop.
+
+2. **Recursive Case**: This is the part of the function where it calls itself with modified arguments, typically working towards the base case.
+
+Recursion is often used to solve problems that can be broken down into smaller, similar subproblems. Examples include problems related to tree and graph traversal, searching and sorting algorithms (e.g., quicksort, merge sort), mathematical calculations (e.g., factorial, Fibonacci sequence), and more. Here's a simple example of a recursive function to calculate the factorial of a number:
+
+```python
+def factorial(n):
+    if n > 0:
+        return n * factorial(n - 1)
+    else:
+        return 1
+```
+
+### Call stack
+
+Function calling system uses stack data structure. The role of this stack in recursion is crucial for understanding how recursive function calls are managed and executed by a computer program.
+
+When a function is called in a program, the computer allocates a region of memory known as the call stack to store information about the function call. This information typically includes the function's parameters, local variables, and the return address, which tells the program where to continue execution after the function call completes.
+
+In the case of recursion, each recursive call to a function adds a new entry, called a stack frame, to the call stack. This stack frame contains the information mentioned earlier (parameters, local variables, return address) specific to that particular invocation of the function.
+
+As the recursion progresses, more and more stack frames are added to the call stack, each representing a nested invocation of the recursive function. When the base case is reached, the recursion starts to unwind. At this point, each function call returns its result and removes its corresponding stack frame from the call stack, allowing the program to resume execution from where it left off.
+
+The call stack thus serves as a mechanism for managing the sequence of recursive function calls and ensuring that the program can keep track of its execution state, even in the presence of nested recursive calls.
+
+However, it's important to note that excessive recursion can lead to stack overflow errors if the call stack grows too large and exhausts the available memory. This is why it's essential to ensure that recursive algorithms have well-defined base cases and termination conditions to prevent such issues.
+
+### Efficiency
+
+However, it's worth noting that recursion may not always be the most efficient solution, as it can consume a significant amount of memory due to the recursive function calls and the stack frames they occupy. In some cases, iterative solutions may be preferred for performance reasons.
+
 ## Advanced Python concepts
 - [List Comprehensions](1.1_List_Comprehension.md)
 - [Generators](1.2_Generators.md)
