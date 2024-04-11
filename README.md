@@ -20,8 +20,8 @@ What every computer science major should know (http://matt.might.net/articles/wh
 - Practical oriented: Heineman, Pollice, Selkow:  Algorithms in a Nutshell, O’Reilly, 2009 
     - Available from the Internet (e.g., Google books)
 - Used in Aalto and MIT: Cormen, Leiserson, Rivest, Stein: Introduction to Algorithms, MIT Press, 2009
-- For Gurus, THE algorithm book:
-Knuth, The Art of Computer Programming, Vols. 1-4A, Addison-Wesley, 2011
+- Good book about algorithms in general: Skiena, The Algorithm Design Manual, Springer, 2012
+- For Gurus, __The__ algorithm book: Knuth, The Art of Computer Programming, Vols. 1-4A, Addison-Wesley, 2011
 
 ## Useful links
 - Good algorithm visualization tool: https://visualgo.net/en
