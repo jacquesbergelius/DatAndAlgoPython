@@ -81,7 +81,9 @@ We use the following classifications exclusively for the purpose of comparing al
 - **Cubic**: $O(n^3)$
 - **Exponential**: $O(2^n)$
 
-If the size of the problem $n$ is small, then the running time of an algorithm is not a concern. However, as the size of the problem grows, the running time of the algorithm becomes a critical factor. Look the picture below to see how the running time of different complexity classes scales with the size of the input data.
+> We don't need to specify the base of the logarithm here, because the base of the logarithm does not affect the order of growth of the function. Different logarithm values differ only with a constant factor, i.e., $\log_2 n = \frac{\log_{10} n}{\log_{10} 2}$. For example, $\log_2 n$ and $\log_{10} n$ are both $O(\log n)$.
+
+If the size of the problem $n$ is small, then the running time of an algorithm is not a concern. However, as the size of the problem grows, the running time of the algorithm becomes a critical factor. Look the picture below to see how the running time of different complexity classes scales with the size of the input data (N).
 
 ![](images/complclasses.png)
 
