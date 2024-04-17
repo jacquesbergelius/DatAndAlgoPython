@@ -65,6 +65,26 @@ However, it's important to note that excessive recursion can lead to stack overf
 
 However, it's worth noting that recursion may not always be the most efficient solution, as it can consume a significant amount of memory due to the recursive function calls and the stack frames they occupy. In some cases, iterative solutions may be preferred for performance reasons.
 
+## Performance Families
+
+We compare algorithms by evaluating their performance on input data of size $n$. This methodology is the standard means developed over the past half-century for comparing algorithms. By doing so, we can determine which algorithms scale to solve problems of nontrivial size by evaluating the running time needed by the in relation to the size of the provided input. A secondary form of performance evaluation is to consider how much memory or storage an algorithm needs.
+
+If the size of the input data is $n$, then the running time of an algorithm is expressed as a function of $n$. The notation $O(f(n))$ is used to describe the upper bound of the running time of an algorithm in terms of $n$. This notation is called Big O notation.
+
+We use the following classifications exclusively for the purpose of comparing algorithms, and they are ordered by decreasing efficiency:
+- **Constant**: $O(1)$
+- **Logarithmic**: $O(\log n)$
+- **Sublinear**: $O(n^d), d < 1$, e.g. $O(\sqrt{n})$
+- **Linear**: $O(n)$
+- **Linearithmic**: $O(n \log n)$
+- **Quadratic**: $O(n^2)$
+- **Cubic**: $O(n^3)$
+- **Exponential**: $O(2^n)$
+
+If the size of the problem $n$ is small, then the running time of an algorithm is not a concern. However, as the size of the problem grows, the running time of the algorithm becomes a critical factor. Look the picture below to see how the running time of different complexity classes scales with the size of the input data.
+
+![](images/complclasses.png)
+
 ## Advanced Python concepts
 - [List Comprehensions](1.1_List_Comprehension.md)
 - [Generators](1.2_Generators.md)
