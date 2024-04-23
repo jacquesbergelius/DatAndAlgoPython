@@ -16,6 +16,8 @@ What every computer science major should know (http://matt.might.net/articles/wh
     - directed and undirected graphs
   - Computer scientists should be ready to implement or extend an algorithm that operates on these data structures, including the ability to search for an element, to add an element and to remove an element
 
+This course involves less coding, and more thinking about how to complete the tasks. During this course, we try to improve our thinking skills more than our coding skills. After all, [programming Is Mostly Thinking](https://agileotter.blogspot.com/2014/09/programming-is-mostly-thinking.html).
+
 ## Useful books (not mandatory):
 - Practical oriented: Heineman, Pollice, Selkow:  Algorithms in a Nutshell, O’Reilly, 2009 
     - Available from the Internet (e.g., Google books)
