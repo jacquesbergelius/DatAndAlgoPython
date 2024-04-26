@@ -111,3 +111,10 @@ Thus, we need suboptimal solutions to solve these NP-hard (Non-Polynomial time) 
 - [Lambda Functions](1.3_Lambda_Functions.md)
 - [Regular Expressions](1.4_Regular_Expressions.md)
 - [Measuring Execution Time of Python Functions](1.5_Execution_Time_Measurement.md)
+
+## Corrections in the Moodle material
+
+Test exam contains a couple of errors in the questions and answers. Here are the corrections:
+Question "Given these different time complexities .." the correct answer has an error. Complexity class $O(n \log n)$ is harder than $(n)$, because the $O(n \log n)$ is a superlinear complexity class, and the $O(n)$ is a linear complexity class. The superlinear complexity class is worse than the linear complexity class.
+
+Question "Write the second entry of a hash table that results from using the hash function, f(x) = (5*n + 3) mod 8, to hash the keys 50, 27, 59, 1, 43, 52, 40, 63, 9 and 56, assuming collisions are handled by chaining. Write the result as a Python list." has incorrect answer [27, 49 ,53], the correct answer is [27, 59 ,43].
