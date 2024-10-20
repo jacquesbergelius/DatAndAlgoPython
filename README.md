@@ -29,6 +29,39 @@ This course involves less coding, and more thinking about how to complete the ta
 - Good algorithm visualization tool: https://visualgo.net/en
 - Special Binary Tree visualizer: http://btv.melezinek.cz/binary-search-tree.html
 
+## Computer Architecture
+
+The connection between a microprocessor and RAM is essential for the operation of a computer. The microprocessor, often referred to as the CPU (central processing unit), is responsible for executing instructions and performing calculations. It relies on RAM (Random Access Memory) as a temporary storage area for the data and instructions it needs to access quickly while executing tasks.
+
+```mermaid
+graph TD
+    CPU[CPU] -->|Address| RAM[RAM]
+    RAM -->|Data| CPU
+```
+
+When a program runs, the CPU fetches instructions and data from RAM, which acts as a high-speed workspace. This interaction occurs through a bus system that includes data, address, and control buses. The data bus carries the actual data between the CPU and RAM, while the address bus specifies the memory location the CPU wants to access. The control bus sends signals that dictate whether the CPU is reading data from RAM or writing data back into it.
+
+In computer memory, an address refers to a specific location where data or instructions are stored. Each memory location in a computer has a unique address, allowing the CPU and other components to access and manage data efficiently.
+
+The address space is the range of addresses that a system can use. This can vary depending on the architecture of the computer. For instance, a 32-bit architecture typically has a theoretical address space of 4 GB (2^32 addresses), while a 64-bit architecture can address a significantly larger space, theoretically up to 16 exabytes (2^64 addresses).
+
+
+```mermaid
+sequenceDiagram
+CPU->>+RAM: Hello RAM, give me a data value at location 1123DBAC
+RAM-->>-CPU: Hi CPU, Here is the data value of 1123DBAC: 12345678!
+
+CPU->>+RAM: Hello RAM, store the data value 87654321 at location 1123DBB1
+RAM-->>-CPU: Hi CPU, I have stored the data value 87654321 at location 1123DBB1
+```
+
+The speed of RAM is significantly higher than that of secondary storage devices like hard drives or SSDs, allowing the CPU to perform operations efficiently. However, RAM is volatile, meaning it loses its contents when the power is turned off, making it suitable for temporary data storage during processing.
+
+In modern computer architectures, [cache memory](https://en.wikipedia.org/wiki/CPU_cache) is also utilized to further enhance performance. This smaller, faster memory is located closer to the CPU and stores frequently accessed data and instructions, minimizing the time the processor needs to fetch information from RAM.
+
+Overall, the interplay between the microprocessor and RAM is vital for ensuring smooth and efficient computing, as the CPU continuously interacts with RAM to retrieve and manipulate the data necessary for executing programs.
+
+
 ## Recursion
 
 [Recursion](https://en.wikipedia.org/wiki/Recursion) in computer science refers to a programming technique where a function calls itself in order to solve a problem. Instead of using iteration (loops) to repeatedly execute a set of instructions, a recursive function breaks down a problem into smaller, more manageable subproblems, eventually reaching a base case where the solution can be directly computed.
