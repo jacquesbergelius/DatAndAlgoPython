@@ -105,6 +105,217 @@ Thus, we need suboptimal solutions to solve these NP-hard (Non-Polynomial time) 
 - [evolutionary computation](https://en.wikipedia.org/wiki/Evolutionary_computation)
 - etc.
 
+## Object-Orientation in Python
+
+A decent introduction of object-orientation in Python can be found in [this](https://acme.byu.edu/0000017a-17ef-d8b9-adfe-77ef21070000/oop-pdf) document. Here are some of the most important topics:
+
+### Inheritance
+
+**Inheritance** in Python allows a class (called a **child class**) to inherit attributes and methods from another class (called a **parent class** or **superclass**). This promotes **code reusability** and the ability to build upon existing functionality. The child class can inherit, override, or extend the functionality of the parent class.
+
+#### Key Concepts:
+- **Parent Class (Superclass)**: The class being inherited from.
+- **Child Class (Subclass)**: The class that inherits from the parent class.
+
+#### Example:
+```python
+class Animal:
+    def speak(self):
+        return "Animal speaks"
+
+class Dog(Animal):
+    def bark(self):
+        return "Dog barks"
+
+dog = Dog()
+print(dog.speak())  # Inherited method from Animal class
+print(dog.bark())   # Method from Dog class
+```
+
+In this example, the `Dog` class inherits the `speak()` method from the `Animal` class while defining its own `bark()` method.
+
+### Magic functions
+
+**Magic functions** (also known as **dunder methods** or **special methods**) in Python are built-in methods that have double underscores at the beginning and end of their names, like `__init__` or `__str__`. These methods allow developers to define behaviors for instances of user-defined classes in Python. They are automatically invoked by Python for certain operations, enabling customization of standard Python behavior such as initialization, representation, comparison, and more.
+
+#### Common Magic Functions:
+1. **`__init__(self)`**:
+  - Initializes a new object instance.
+  - Called when a new instance of a class is created (constructor).
+  - Example:
+    ```python
+    class Person:
+        def __init__(self, name):
+            self.name = name
+    ```
+
+2. **`__str__(self)`**:
+  - Returns a string representation of the object.
+  - Called when `str()` or `print()` is used on an object.
+  - Example:
+    ```python
+    def __str__(self):
+        return f"Person: {self.name}"
+    ```
+
+3. **`__repr__(self)`**:
+  - Returns a formal string representation of the object.
+  - Often used for debugging and called by `repr()`.
+  - Example:
+    ```python
+    def __repr__(self):
+        return f"Person({self.name!r})"
+    ```
+
+4. **`__len__(self)`**:
+  - Returns the length of the object (e.g., when `len()` is called).
+  - Example:
+    ```python
+    def __len__(self):
+        return len(self.name)
+    ```
+
+5. **`__getitem__(self, key)`**:
+  - Allows objects to be indexed like lists or dictionaries.
+  - Example:
+    ```python
+    def __getitem__(self, index):
+        return self.data[index]
+    ```
+
+6. **`__add__(self, other)`**:
+  - Defines the behavior for the `+` operator.
+  - Example:
+    ```python
+    def __add__(self, other):
+        return self.value + other.value
+    ```
+
+7. **`__eq__(self, other)`**:
+  - Defines the behavior for the `==` operator (equality).
+  - Example:
+    ```python
+    def __eq__(self, other):
+        return self.name == other.name
+    ```
+
+#### Purpose:
+Magic functions help in customizing Python class behavior for operators, built-in functions, and type casting. They allow developers to define **object-oriented** behavior that integrates naturally with Python's syntax.
+
+More information on magic methods can be found in the [Guide to Python's Magic Methods](https://github.com/RafeKettler/magicmethods/blob/master/magicmethods.pdf).
+
+### Private variables
+
+In Python, **private variables** are variables that are intended to be **hidden** from outside access, meaning they should only be accessible within the class they are defined in. While Python doesn’t have strict access modifiers like some other languages (e.g., `private` in Java or C++), it provides a convention for creating private variables.
+
+#### How to Define a Private Variable:
+In Python, private variables are denoted by **prefixing their name with two underscores (`__`)**. This triggers name mangling, which changes the variable name internally to prevent direct access from outside the class.
+
+#### Example:
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name        # Public variable
+        self.__age = age        # Private variable
+
+    def get_age(self):
+        return self.__age       # Accessing private variable from within the class
+
+# Creating an instance of Person
+person = Person("John", 30)
+
+print(person.name)     # Works fine (public)
+print(person.get_age())  # Accessing private variable through a method
+print(person.__age)    # Raises AttributeError (private)
+```
+
+#### Key Points:
+1. **Name Mangling**: Python internally changes the name of a private variable. For example, `__age` becomes `_Person__age`. This is done to make it harder (but not impossible) to access private variables from outside the class.
+
+2. **Accessing Private Variables**: Though Python doesn’t enforce strict privacy, you can still access private variables through name mangling:
+   ```python
+   print(person._Person__age)  # This works but is not recommended
+   ```
+
+3. **Private vs. Public**:
+  - **Public variables** (without the underscore prefix) are accessible from outside the class.
+  - **Private variables** (with a `__` prefix) are intended to be accessed only within the class.
+
+#### Purpose of Private Variables:
+- **Encapsulation**: Helps in controlling how certain data is accessed or modified.
+- **Data Protection**: Limits access to sensitive data, ensuring it’s only modified or accessed in controlled ways.
+
+While Python doesn't have strict access control like other languages, the use of private variables is a convention to **signal intent** about how class attributes should be used.
+
+### Difference Between Class and Object Variables
+
+In Python, **class variables** and **object (instance) variables** are both attributes that belong to a class, but they have distinct behaviors and uses:
+
+#### 1. **Class Variables** (or Static Variables):
+- **Shared Across All Instances**: Class variables are shared by all instances of a class. They are defined within the class but outside of any method.
+- **Accessed Using the Class Name**: Class variables are typically accessed using the class name, although they can also be accessed through instances.
+- **Same Value for All Instances**: Any changes to a class variable affect all instances of the class, because the variable is shared across them.
+
+##### Example of a Class Variable:
+```python
+class Car:
+    wheels = 4  # Class variable
+
+    def __init__(self, color):
+        self.color = color  # Instance variable
+
+# All cars have 4 wheels, shared by all instances
+car1 = Car("Red")
+car2 = Car("Blue")
+
+print(car1.wheels)  # Output: 4
+print(car2.wheels)  # Output: 4
+
+Car.wheels = 6  # Changing the class variable affects all instances
+print(car1.wheels)  # Output: 6
+print(car2.wheels)  # Output: 6
+```
+
+#### 2. **Object (Instance) Variables**:
+- **Unique to Each Instance**: Object (or instance) variables are attributes that belong to each specific object instance. They are defined within the `__init__()` method (or other instance methods) using `self`.
+- **Accessed Using the Instance**: Instance variables are accessed through the specific instance of the class and hold data that is unique to that instance.
+- **Different Values for Each Instance**: Each object instance can have its own unique values for instance variables, unlike class variables which are shared.
+
+##### Example of an Object (Instance) Variable:
+```python
+class Car:
+    wheels = 4  # Class variable
+
+    def __init__(self, color):
+        self.color = color  # Instance variable
+
+car1 = Car("Red")
+car2 = Car("Blue")
+
+print(car1.color)  # Output: Red
+print(car2.color)  # Output: Blue
+
+# Changing car1's color does not affect car2
+car1.color = "Green"
+print(car1.color)  # Output: Green
+print(car2.color)  # Output: Blue
+```
+
+#### Key Differences:
+
+| **Feature**           | **Class Variables**                     | **Object (Instance) Variables**            |
+|-----------------------|-----------------------------------------|--------------------------------------------|
+| **Defined**           | Outside any method, at the class level  | Inside methods, typically `__init__()`     |
+| **Access**            | Accessed via class or instance          | Accessed via instances (`self.variable`)   |
+| **Shared or Unique**  | Shared across all instances             | Unique to each instance                    |
+| **Scope**             | Class-wide scope (same for all objects) | Object-specific scope (each object has its own) |
+| **Modification**      | Modifying it affects all instances      | Modifying it affects only the specific instance |
+| **Example Use**       | Constants or values that are the same for all instances (e.g., number of wheels in a car class) | Attributes that vary between instances (e.g., color of a car) |
+
+#### Summary:
+- **Class variables** are shared across all instances of the class and are used for data that remains the same for all objects.
+- **Object variables** (instance variables) are specific to each instance and are used for data that can differ between objects.
+
 ## Advanced Python concepts
 - [List Comprehensions](1.1_List_Comprehension.md)
 - [Generators](1.2_Generators.md)
