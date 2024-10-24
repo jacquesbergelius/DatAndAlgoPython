@@ -8,7 +8,7 @@ What every computer science major should know (http://matt.might.net/articles/wh
 - Students should certainly see the common (or rare yet unreasonably effective) data structures and algorithms
 - But, more important than knowing a specific algorithm or data structure (which is usually easy enough to look up), computer scientists must understand how to design algorithms (e.g., greedy, dynamic strategies) and how to span the gap between an algorithm in the ideal and the nitty-gritty of its implementation
 - Specific recommendations
-  - At a minimum, computer scientists seeking stable long-run employment should know all of the following:
+  - At a minimum, computer scientists seeking stable long-run employment should know all the following:
     - hash tables
     - linked lists
     - trees
@@ -31,6 +31,8 @@ This course involves less coding, and more thinking about how to complete the ta
 
 ## Computer Architecture
 
+To understand how computers work, it is essential to have a basic understanding of computer architecture. Computer architecture refers to the design of a computer system, including its components and the way they interact to perform tasks. Key components of computer architecture include the central processing unit (CPU), memory, input/output devices, and the system bus.
+
 The connection between a microprocessor and RAM is essential for the operation of a computer. The microprocessor, often referred to as the CPU (central processing unit), is responsible for executing instructions and performing calculations. It relies on RAM (Random Access Memory) as a temporary storage area for the data and instructions it needs to access quickly while executing tasks.
 
 ```mermaid
@@ -43,7 +45,8 @@ When a program runs, the CPU fetches instructions and data from RAM, which acts 
 
 In computer memory, an address refers to a specific location where data or instructions are stored. Each memory location in a computer has a unique address, allowing the CPU and other components to access and manage data efficiently.
 
-The address space is the range of addresses that a system can use. This can vary depending on the architecture of the computer. For instance, a 32-bit architecture typically has a theoretical address space of 4 GB (2^32 addresses), while a 64-bit architecture can address a significantly larger space, theoretically up to 16 exabytes (2^64 addresses).
+The address space is the range of addresses that a system can use. This can vary depending on the architecture of the computer. For instance, a 32-bit architecture typically has a theoretical address space of 4 GB ($2^{32}$ addresses), while a 64-bit architecture can address a significantly larger space, theoretically up to 16 exabytes ($2^{64}$ addresses).
+> By 32-bit architecture, we mean that the main CPU registers are 32-bit wide, and the address bus is 32-bit wide. The 32-bit architecture is still widely used, but the 64-bit architecture is becoming more common due to its ability to address a larger memory space.
 
 
 ```mermaid
