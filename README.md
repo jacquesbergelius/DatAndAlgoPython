@@ -27,7 +27,8 @@ This course involves less coding, and more thinking about how to complete the ta
 
 ## Useful links
 - Good algorithm visualization tool: https://visualgo.net/en
-- Special Binary Tree visualizer: http://btv.melezinek.cz/binary-search-tree.html
+- Another data structure visualization tool: https://csvistool.com/
+- Just another visualization tool: https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
 
 ## Computer Architecture
 
