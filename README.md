@@ -33,12 +33,12 @@ This course involves less coding, and more thinking about how to complete the ta
 
 To understand how computers work, it is essential to have a basic understanding of computer architecture. Computer architecture refers to the design of a computer system, including its components and the way they interact to perform tasks. Key components of computer architecture include the central processing unit (CPU), memory, input/output devices, and the system bus.
 
-The connection between a microprocessor and RAM is essential for the operation of a computer. The microprocessor, often referred to as the CPU (central processing unit), is responsible for executing instructions and performing calculations. It relies on RAM (Random Access Memory) as a temporary storage area for the data and instructions it needs to access quickly while executing tasks.
+The connection between a microprocessor and RAM (Random Access Memory) is essential for the operation of a computer. The microprocessor, often referred to as the CPU, is responsible for executing instructions and performing calculations. It relies on RAM as a temporary storage area for the data and instructions it needs to access quickly while executing tasks.
 
 ```mermaid
-graph TD
+flowchart LR
     CPU[CPU] -->|Address| RAM[RAM]
-    RAM -->|Data| CPU
+    RAM <-->|Data| CPU
 ```
 
 When a program runs, the CPU fetches instructions and data from RAM, which acts as a high-speed workspace. This interaction occurs through a bus system that includes data, address, and control buses. The data bus carries the actual data between the CPU and RAM, while the address bus specifies the memory location the CPU wants to access. The control bus sends signals that dictate whether the CPU is reading data from RAM or writing data back into it.
@@ -60,7 +60,7 @@ RAM-->>-CPU: Hi CPU, I have stored the data value 87654321 at location 1123DBB1
 
 The speed of RAM is significantly higher than that of secondary storage devices like hard drives or SSDs, allowing the CPU to perform operations efficiently. However, RAM is volatile, meaning it loses its contents when the power is turned off, making it suitable for temporary data storage during processing.
 
-In modern computer architectures, [cache memory](https://en.wikipedia.org/wiki/CPU_cache) is also utilized to further enhance performance. This smaller, faster memory is located closer to the CPU and stores frequently accessed data and instructions, minimizing the time the processor needs to fetch information from RAM.
+In modern computer architectures, [cache memory](https://en.wikipedia.org/wiki/CPU_cache) is also used to further enhance performance. This smaller, faster memory is located closer to the CPU and stores frequently accessed data and instructions, minimizing the time the processor needs to fetch information from RAM.
 
 Overall, the interplay between the microprocessor and RAM is vital for ensuring smooth and efficient computing, as the CPU continuously interacts with RAM to retrieve and manipulate the data necessary for executing programs.
 
