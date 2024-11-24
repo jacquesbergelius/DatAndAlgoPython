@@ -68,7 +68,7 @@ Overall, the interplay between the microprocessor and RAM is vital for ensuring 
 
 ## Recursion
 
-[Recursion](https://en.wikipedia.org/wiki/Recursion) in computer science refers to a programming technique where a function calls itself in order to solve a problem. Instead of using iteration (loops) to repeatedly execute a set of instructions, a recursive function breaks down a problem into smaller, more manageable subproblems, eventually reaching a base case where the solution can be directly computed.
+[Recursion](https://en.wikipedia.org/wiki/Recursion) in computer science refers to a programming technique where a function calls itself to solve a problem. Instead of using iteration (loops) to repeatedly execute a set of instructions, a recursive function breaks down a problem into smaller, more manageable subproblems, eventually reaching a base case where the solution can be directly computed.
 
 The basic structure of a recursive function includes:
 
@@ -85,6 +85,7 @@ def factorial(n):
     else:
         return 1
 ```
+> Factorial is used to calculate the number of [permutations](https://en.wikipedia.org/wiki/Permutation) of a set of objects. For example, the factorial of 5 (written as 5!) is 5 * 4 * 3 * 2 * 1 = 120. This means that you are able to arrange 5 items in 120 different ways.
 
 ### Call stack
 
@@ -104,13 +105,17 @@ However, it's important to note that excessive recursion can lead to stack overf
 
 However, it's worth noting that recursion may not always be the most efficient solution, as it can consume a significant amount of memory due to the recursive function calls and the stack frames they occupy. In some cases, iterative solutions may be preferred for performance reasons.
 
-## Performance Families
+### Problem-solving with recursion
+
+Recursion is a powerful technique that can be used to solve a wide range of problems. Eight queens problem is a classic example of a problem that can be solved using recursion. [Here](1.6_EightQueens.md)'s a brief overview of the problem and how recursion can be applied to solve it.
+  
+# Performance Families
 
 We compare algorithms by evaluating their performance on input data of size $n$. This methodology is the standard means developed over the past half-century for comparing algorithms. By doing so, we can determine which algorithms scale to solve problems of nontrivial size by evaluating the running time needed by the in relation to the size of the provided input. A secondary form of performance evaluation is to consider how much memory or storage an algorithm needs.
 
 If the size of the input data is $n$, then the running time of an algorithm is expressed as a function of $n$. The notation $O(f(n))$ is used to describe the upper bound of the running time of an algorithm in terms of $n$. This notation is called Big O notation.
 
-We use the following classifications exclusively for the purpose of comparing algorithms, and they are ordered by decreasing efficiency:
+We use the following classifications exclusively to compare algorithms, and they are ordered by decreasing efficiency:
 - **Constant**: $O(1)$
 - **Logarithmic**: $O(\log n)$
 - **Sublinear**: $O(n^d), d < 1$, e.g. $O(\sqrt{n})$
