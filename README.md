@@ -147,7 +147,17 @@ Thus, we need suboptimal solutions to solve these NP-hard (Non-Polynomial time) 
 - [evolutionary computation](https://en.wikipedia.org/wiki/Evolutionary_computation)
 - etc.
 
-## Object-Orientation in Python
+
+# Algorithms and computability
+
+Whatever system which is based on logical reasoning cannot solve every problem existing in the world. [Kurt Gödel](https://en.wikipedia.org/wiki/Kurt_G%C3%B6del) proved in 1931 that logical reasoning of whatever power cannot govern all the mathematical truth. This means that “complete” logical system is impossible to device. For example, the [continuum hypothesis](https://en.wikipedia.org/wiki/Continuum_hypothesis) is a statement in set theory that states that there is no set whose size is strictly between that of the integers and the real numbers (or how many points on a line are there?). This statement cannot be proven true or false using the standard axioms of set theory. The [Russell’s paradox](https://en.wikipedia.org/wiki/Russell%27s_paradox) is another example of a problem that cannot be solved using logical reasoning. 
+> Simplified Russel's paradox: Suppose there is a town with just one male barber; and that every man in the town keeps himself clean-shaven: some by shaving themselves, some by attending the barber. It seems reasonable to imagine that the barber obeys the following rule: He shaves all and only those men who do not shave themselves.
+Under this scenario, we can ask the following question: Does the barber shave himself?
+
+This means that all consistent, axiomatic systems of number theory contain propositions which cannot be proven truth. On the other hand, the powerfulness of the system can be improved, and in this way, we can solve more complicated problems (which cannot be solved before). For example, [Poincaré conjecture](https://en.wikipedia.org/wiki/Poincar%C3%A9_conjecture) problem created by [Henry Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9) in 1904. Resolved in 2002–2003 by [Grigori Perelman](https://en.wikipedia.org/wiki/Grigori_Perelman). But still, we have improvable problems remaining (but of course they are more complicated). For example, continuous hypothesis has not been solved (H. Woodin proposed in 2000 that the whole question is wrong, it depends on the set theory used). Closed form solution for [Navier–Stokes equations](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations) (year 1850) is still missing
+
+
+# Object-Orientation in Python
 
 A decent introduction of object-orientation in Python can be found in [this](https://acme.byu.edu/0000017a-17ef-d8b9-adfe-77ef21070000/oop-pdf) document. [Here](1.0_Object_Orientation_python.md) are some of the most important topics.
 
